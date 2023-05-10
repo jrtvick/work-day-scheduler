@@ -18,6 +18,9 @@ for (var i = 0; i < hours.length; i++) {
 
 var saveButtons = document.querySelectorAll(".saveBtn")
 console.log(saveButtons)
+var buttonsArray = Array.from(saveButtons)
+console.log(buttonsArray)
+
 
 function getHour(hour) {
   switch (hour) {
@@ -40,4 +43,11 @@ function getHour(hour) {
     case "17":
       return "5PM"
   }
+}
+
+for (var i = 0; i < buttonsArray.length; i++) {
+  // console.log(buttonsArray[i])
+  buttonsArray[i].addEventListener("click", function(e){
+    console.log(e.currentTarget.previousElementSibling.value)
+  })
 }
