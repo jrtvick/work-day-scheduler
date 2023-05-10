@@ -8,8 +8,8 @@ for (var i = 0; i < hours.length; i++) {
   outerDiv.id = hours[i]
   outerDiv.classList.add('row', 'time-block')
   outerDiv.innerHTML = `<div class="col-2 col-md-1 hour text-center py-3">${getHour(hours[i])}</div>
-  <textarea class="col-8 col-md-10 description" rows="3"> </textarea>
-  <button class="btn saveBtn col-2 col-md-1" aria-label="save">
+  <textarea class="col-8 col-md-10 description" rows="3">${localStorage.getItem(hours[i]) || ''}</textarea>
+  <button id="${hours[i]}" class="btn saveBtn col-2 col-md-1" aria-label="save">
     <i class="fas fa-save" aria-hidden="true"></i>
   </button>`
 
@@ -48,6 +48,7 @@ function getHour(hour) {
 for (var i = 0; i < buttonsArray.length; i++) {
   // console.log(buttonsArray[i])
   buttonsArray[i].addEventListener("click", function(e){
-    console.log(e.currentTarget.previousElementSibling.value)
+    var valueToStore = (e.currentTarget.previousElementSibling.value)
+    localStorage.setItem(e.currentTarget.id, valueToStore)
   })
 }
