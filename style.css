@@ -57,3 +57,35 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+/* My styling starts here. It serves no real purpose outside of appearance. */
+#currentDay:hover {
+  cursor: crosshair;
+  color: coral;
+}
+
+.col-8:hover {
+  cursor: crosshair;
+  border-color: coral;
+  outline: 0%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+
+}
+
+a:hover {
+  cursor: crosshair;
+  color: coral;
+}
+
+a:visited {
+  text-decoration: none;
+}
